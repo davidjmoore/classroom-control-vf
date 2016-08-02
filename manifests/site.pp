@@ -50,6 +50,12 @@ notify { "Hello, my name is ${::hostname}": }
 # mode => '0644',
 # content => "Today I learned what it means to manage state using Puppet.\n",
 #}
+
+package { 'cowsay':
+  ensure => present,
+  provider => gem,
+}
+
 exec { "cowsay 'Welcome to ${::fqdn}!' > /etc/motd":
 path => '/usr/bin:/usr/local/bin',
 creates => '/etc/motd',
