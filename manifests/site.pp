@@ -1,6 +1,6 @@
 ## site.pp ##
 
-# This file (/etc/puppetlabs/puppet/manifests/site.pp) is the main entry point
+# This  file (/etc/puppetlabs/puppet/manifests/site.pp) is the main entry point
 # used when an agent connects to a master and asks for an updated configuration.
 #
 # Global objects like filebuckets and resource defaults should go in this file,
