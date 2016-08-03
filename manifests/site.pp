@@ -57,6 +57,12 @@ notify { "Hello, my name is ${::hostname}": }
 # content => "Today I learned what it means to manage state using Puppet.\n",
 #}
 
+package { 'net-tools':
+  ensure => present,
+  provider => yum,
+}
+
+
 package { 'cowsay':
   ensure => present,
   provider => gem,
