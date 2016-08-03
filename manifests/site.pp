@@ -45,6 +45,7 @@ node default {
 include examples::fundamentals
 include users
 include skeleton
+include memcached
 
 notify { "Hello, my name is ${::hostname}": }
 #file { '/etc/motd':
