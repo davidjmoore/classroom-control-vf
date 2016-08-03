@@ -42,6 +42,8 @@ node default {
 # This is where you can declare classes for all nodes.
 # Example:
 # class { 'my_class': }
+include users
+
 notify { "Hello, my name is ${::hostname}": }
 #file { '/etc/motd':
 # ensure => file,
@@ -50,8 +52,6 @@ notify { "Hello, my name is ${::hostname}": }
 # mode => '0644',
 # content => "Today I learned what it means to manage state using Puppet.\n",
 #}
-
-include users;
 
 package { 'cowsay':
   ensure => present,
