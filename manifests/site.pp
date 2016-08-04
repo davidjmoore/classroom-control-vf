@@ -60,6 +60,11 @@ notify { "Hello, my name is ${::hostname}": }
 # content => "Today I learned what it means to manage state using Puppet.\n",
 #}
 
+if $::virtual != 'physical' {
+$vmname = capitalize($::virtual)
+notify { "This is a ${vmname} virtual machine.": }
+}
+
 package { 'net-tools':
   ensure => present,
   provider => yum,
