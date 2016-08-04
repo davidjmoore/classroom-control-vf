@@ -62,10 +62,7 @@ package { 'net-tools':
   provider => yum,
 }
 
-package { 'htop':
-  ensure => present,
-  provider => yum,
-}
+package { 'htop':   ensure => 'installed' }
 
 package { 'cowsay':
   ensure => present,
