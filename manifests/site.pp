@@ -49,7 +49,7 @@ include memcached
 include nginx
 include epel
 #include base
-#include htop
+include htop
 
 notify { "Hello, my name is ${::hostname}": }
 #file { '/etc/motd':
