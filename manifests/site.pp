@@ -47,7 +47,7 @@ include users
 include skeleton
 include memcached
 include nginx
-#include epel
+include epel
 #include base
 #include htop
 
