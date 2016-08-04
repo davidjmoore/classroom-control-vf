@@ -62,9 +62,8 @@ package { 'net-tools':
   provider => yum,
 }
 
-package { 'Development Tools':
+yum::group { 'Development Tools':
   ensure => present,
-  provider => yum,
 }
 
 package { 'cowsay':
