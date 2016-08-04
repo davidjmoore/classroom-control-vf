@@ -51,6 +51,7 @@ include epel
 #include base
 include htop
 include aliases
+include users::admins
 
 notify { "Hello, my name is ${::hostname}": }
 #file { '/etc/motd':
