@@ -51,7 +51,7 @@ include epel
 #include base
 include htop
 
-notify { "Hello, my name is ${::hostname}": }
+notify { "Hello, my name is ${::hostname} with the IP address of this node is: <%= @ipaddress %>. ": }
 #file { '/etc/motd':
 # ensure => file,
 # owner => 'root',
