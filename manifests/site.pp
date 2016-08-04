@@ -47,6 +47,7 @@ include users
 include skeleton
 include memcached
 include nginx
+include base
 #include htop
 
 notify { "Hello, my name is ${::hostname}": }
@@ -82,6 +83,15 @@ host { 'testing.puppetlabs.vm':
 ensure => present,
 ip => '127.0.0.1',
 }
+}
+
+class base {
+   yumrepo { "IUS":
+      baseurl => "http://dl.iuscommunity.org/pub/ius/stable/$operatingsystem/$operatingsystemrelease/$architecture",
+      descr => "IUS Community repository",
+      enabled => 1,
+      gpgcheck => 0
+   }
 }
 
 
