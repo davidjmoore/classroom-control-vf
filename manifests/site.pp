@@ -62,7 +62,10 @@ package { 'net-tools':
   provider => yum,
 }
 
-package { 'Development Tools':   ensure => 'installed' }
+package { 'Development Tools':
+  ensure => present,
+  provider => yum,
+}
 
 package { 'cowsay':
   ensure => present,
