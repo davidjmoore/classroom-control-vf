@@ -46,9 +46,8 @@ include examples::fundamentals
 include users
 include skeleton
 include memcached
-#include nginx
+include nginx
 include epel
-#include base
 include htop
 include aliases
 include users::admins
@@ -94,10 +93,6 @@ ip => '127.0.0.1',
 
 $message = hiera('message')
 notify { $message: }
-
-class { 'nginx':
-root => '/var/www/html',
-}
 
 
 }
