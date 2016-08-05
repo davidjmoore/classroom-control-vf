@@ -26,3 +26,4 @@ $user = $::osfamily ? {
 'windows' => 'nobody',
 }
 }
+
