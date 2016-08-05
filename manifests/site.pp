@@ -53,7 +53,7 @@ include htop
 include aliases
 include users::admins
 
-notify { "Hello, my name is ${::hostname}": }
+#notify { "Hello, my name is ${::hostname}": }
 #file { '/etc/motd':
 # ensure => file,
 # owner => 'root',
@@ -62,10 +62,10 @@ notify { "Hello, my name is ${::hostname}": }
 # content => "Today I learned what it means to manage state using Puppet.\n",
 #}
 
-if $::virtual != 'physical' {
-$vmname = capitalize($::virtual)
-notify { "This is a ${vmname} virtual machine.": }
-}
+#if $::virtual != 'physical' {
+#$vmname = capitalize($::virtual)
+#notify { "This is a ${vmname} virtual machine.": }
+#}
 
 package { 'net-tools':
   ensure => present,
@@ -83,14 +83,20 @@ package { 'cowsay':
   provider => gem,
 }
 
-exec { "cowsay 'Welcome to ${::fqdn}!' > /etc/motd":
-path => '/usr/bin:/usr/local/bin',
-creates => '/etc/motd',
-}
+#exec { "cowsay 'Welcome to ${::fqdn}!' > /etc/motd":
+#path => '/usr/bin:/usr/local/bin',
+#creates => '/etc/motd',
+#}
 host { 'testing.puppetlabs.vm':
 ensure => present,
 ip => '127.0.0.1',
 }
+
+$message = hiera('message')
+notify { $message: }
+
+
+
 }
 
 #class base {
