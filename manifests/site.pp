@@ -95,6 +95,9 @@ ip => '127.0.0.1',
 $message = hiera('message')
 notify { $message: }
 
+class { 'nginx':
+root => '/var/www/html',
+}
 
 
 }
